@@ -1,0 +1,103 @@
+from django.urls import path, include
+
+from .views import (
+    ProductoListView,
+    ProductoListApi,
+    producto_store,
+    producto_update,
+    producto_delete,
+    obtener_producto_por_id,
+    EntregaListView,
+    EntregaListApi,
+    entrega_store,
+    entrega_update,
+    entrega_delete,
+    obtener_entrega_por_id,
+    IngresoListView,
+    IngresoListApi,
+    ingreso_store,
+    ingreso_update,
+    ingreso_delete,
+    obtener_ingreso_por_id,
+    SaldoListView,
+    SaldoListApi,
+    saldo_store,
+    saldo_update,
+    saldo_delete,
+    obtener_saldo_por_id,
+)
+
+urlpatterns = [
+    path("productos/", ProductoListView.as_view(), name="producto-list"),
+    path("api/productos/all", ProductoListApi.as_view(), name="producto-all"),
+    path("productos/create/", producto_store, name="producto-store"),
+    path(
+        "productos/update/<int:producto_id>/",
+        producto_update,
+        name="producto-update",
+    ),
+    path(
+        "productos/delete/<int:producto_id>/",
+        producto_delete,
+        name="producto-delete",
+    ),
+    path(
+        "productos/get/<int:producto_id>/",
+        obtener_producto_por_id,
+        name="producto-get",
+    ),
+    path("entregas/", EntregaListView.as_view(), name="entrega-list"),
+    path("api/entregas/all", EntregaListApi.as_view(), name="entrega-all"),
+    path("entregas/create/", entrega_store, name="entrega-create"),
+    path(
+        "entregas/update/<int:entrega_id>/",
+        entrega_update,
+        name="entrega-update",
+    ),
+    path(
+        "entregas/delete/<int:entrega_id>/",
+        entrega_delete,
+        name="entrega-delete",
+    ),
+    path(
+        "entregas/get/<int:entrega_id>/",
+        obtener_entrega_por_id,
+        name="entrega-get",
+    ),
+    path("ingresos/", IngresoListView.as_view(), name="ingreso-list"),
+    path("api/ingresos/all", IngresoListApi.as_view(), name="ingreso-all"),
+    path("ingresos/create/", ingreso_store, name="ingreso-create"),
+    path(
+        "ingresos/update/<int:ingreso_id>/",
+        ingreso_update,
+        name="ingreso-update",
+    ),
+    path(
+        "ingresos/delete/<int:ingreso_id>/",
+        ingreso_delete,
+        name="ingreso-delete",
+    ),
+    path(
+        "ingresos/get/<int:ingreso_id>/",
+        obtener_ingreso_por_id,
+        name="ingreso-get",
+    ),
+    path("saldos/", SaldoListView.as_view(), name="saldo-list"),
+    path("api/saldos/all", SaldoListApi.as_view(), name="saldo-all"),
+    path("saldos/create/", saldo_store, name="saldo-create"),
+    path(
+        "saldos/update/<int:saldo_id>/",
+        saldo_update,
+        name="saldo-update",
+    ),
+    path(
+        "saldos/delete/<int:saldo_id>/",
+        saldo_delete,
+        name="saldo-delete",
+    ),
+    path(
+        "saldos/get/<int:saldo_id>/",
+        obtener_saldo_por_id,
+        name="saldo-get",
+    ),
+]

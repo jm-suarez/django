@@ -1,0 +1,15 @@
+# Archivos y directorios generados por el sistema
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos y directorios específicos de IDEs o editores de texto
+.vscode/
+
+# Archivos de dependencias de Python (por ejemplo, en entornos virtuales)
+venv/
+
+# Archivos generados por sistemas operativos y editores
+Thumbs.db
+.DS_Store
